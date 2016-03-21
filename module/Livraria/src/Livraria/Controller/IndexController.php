@@ -10,6 +10,7 @@ class IndexController extends AbstractActionController
     public function indexAction()
     {
         /*
+         * ZEND DB
         $CategoriaService = $this->serviceLocator->get('Livraria\Model\CategoriaService');
         $categorias = $CategoriaService->fetchAll();
          */
@@ -18,7 +19,6 @@ class IndexController extends AbstractActionController
         $repo = $em->getRepository('Livraria\Entity\Categoria');
         
         $categorias = $repo->findAll();
-        
         return new ViewModel(array('categorias' => $categorias));
     }
 }
