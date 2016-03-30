@@ -14,6 +14,8 @@ use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Livraria\Model\CategoriaTable,
     Livraria\Model\CategoriaService;
+use Livraria\Service\Categoria,
+    Livraria\Service\Livro;
 
 class Module {
 
@@ -32,7 +34,6 @@ class Module {
         );
     }
 
-    
     public function getServiceConfig() {
         return array(
             'factories' => array(
@@ -41,8 +42,22 @@ class Module {
                     $categoriaTable = new CategoriaTable($dbAdapter);
                     $categoriaService = new CategoriaService($categoriaTable);
                     return $categoriaService;
-                }
+                },
+                'Livraria\Service\Categoria' => function($service) {
+                    return new Categoria($service->get('Doctrine\ORM\EntityManager'));
+                },
+                'Livraria\Service\Livro' => function($service) {
+                    return new Livro($service->get('Doctrine\ORM\EntityManager'));
+                },
+                'LivrariaAdmin\Form\Livro' => function($service) {
+                    $em = $service->get('Doctrine\ORM\EntityManager');
+                    $repository = $em->getRepository('Livraria\Entity\Categoria');
+                    $categorias = $repository->fetchPairs();
+                    return new LivroFrm($service->get(null,$categorias));
+                },
+                        
             )
         );
-    }   
+    }
+
 }

@@ -15,6 +15,15 @@ return array(
                     ),
                 ),
             ),
+            'livraria-admin-interna' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/admin/[:controller[/:action]][/:id]',
+                    'constraints' => array(
+                        'id' => '[0-9]+'
+                    ),
+                ),
+            ),
             'livraria-admin' => array(
                 'type' => 'Segment',
                 'options' => array(
@@ -24,13 +33,14 @@ return array(
                         'page' => 1
                     )
                 )
-            )
+            ),
         ),
     ),
     'controllers' => array(
         'invokables' => array(
             'Livraria\Controller\Index' => Controller\IndexController::class,
-            'categoria' => \LivrariaAdmin\Controller\CategoriaController::class
+            'categoria' => \LivrariaAdmin\Controller\CategoriaController::class,
+            'livro' => \LivrariaAdmin\Controller\LivroController::class,
         ),
     ),
     'view_manager' => array(

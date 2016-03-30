@@ -19,11 +19,11 @@
             </td>
             <td>
                 <a class="btn btn-success" href="<?= $this->url('livraria-admin-interna',
-                        array('controller' => 'categoria', 'action' => 'edit', 'id' => $entity->getId())); ?>">
+                        array('controller' => 'livro', 'action' => 'edit', 'id' => $entity->getId())); ?>">
                     Editar
                 </a>
                 <a class="btn btn-success" href="<?= $this->url('livraria-admin-interna',
-                        array('controller' => 'categoria', 'action' => 'delete', 'id' => $entity->getId())); ?>">
+                        array('controller' => 'livro', 'action' => 'delete', 'id' => $entity->getId())); ?>">
                     Deletar
                 </a>
             </td>
@@ -36,4 +36,4 @@
 <?php echo $this->paginationControl($this->data,'Sliding','paginator'); ?>
 
 
-<a class="btn btn-success" href="<?= $this->url('livraria-admin',array('controller' => 'categoria' , 'action' => 'new'));?>">Nova Categoria</a>
+<a class="btn btn-success" href="<?= $this->url('livraria-admin',array('controller' => 'livro' , 'action' => 'new'));?>">Nova Categoria</a>
