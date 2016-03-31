@@ -1,13 +1,5 @@
 <?php
 
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
-
 namespace Livraria;
 
 use Zend\Mvc\ModuleRouteListener;
@@ -16,6 +8,8 @@ use Livraria\Model\CategoriaTable,
     Livraria\Model\CategoriaService;
 use Livraria\Service\Categoria,
     Livraria\Service\Livro;
+
+use LivrariaAdmin\Form\Livro as LivroFrm;
 
 class Module {
 
@@ -53,11 +47,10 @@ class Module {
                     $em = $service->get('Doctrine\ORM\EntityManager');
                     $repository = $em->getRepository('Livraria\Entity\Categoria');
                     $categorias = $repository->fetchPairs();
-                    return new LivroFrm($service->get(null,$categorias));
+                    //return new LivroFrm($service->get(null,$categorias));
+                    return new LivroFrm(null,$categorias);
                 },
-                        
             )
         );
     }
-
 }

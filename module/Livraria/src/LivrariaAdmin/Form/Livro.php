@@ -5,7 +5,7 @@ namespace LivrariaAdmin\Form;
 use Zend\Form\Form,
     Zend\Form\Element\Select;
 
-class Categoria extends Form {
+class Livro extends Form {
 
     protected $categorias;
 
@@ -34,10 +34,6 @@ class Categoria extends Form {
                 'placeholder' => 'Informe o nome'
             )
         ));
-
-
-        $repository = $this->em->getRepository('Livraria\Entity\Categoria');
-        $categorias = $repository->fetchPairs();
 
         $categoria = new Select();
         $categoria->setLabel("Categoria")
@@ -97,5 +93,4 @@ class Categoria extends Form {
             )
         ));
     }
-
 }

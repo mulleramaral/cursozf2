@@ -36,7 +36,7 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
      *
      * @see \Doctrine\Common\Persistence\Proxy::__getLazyProperties
      */
-    public static $lazyPropertiesDefaults = array();
+    public static $lazyPropertiesDefaults = [];
 
 
 
@@ -64,10 +64,10 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'nome');
+            return ['__isInitialized__', 'id', 'nome', 'livros'];
         }
 
-        return array('__isInitialized__', 'id', 'nome');
+        return ['__isInitialized__', 'id', 'nome', 'livros'];
     }
 
     /**
@@ -97,7 +97,7 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
      */
     public function __clone()
     {
-        $this->__cloner__ && $this->__cloner__->__invoke($this, '__clone', array());
+        $this->__cloner__ && $this->__cloner__->__invoke($this, '__clone', []);
     }
 
     /**
@@ -105,7 +105,7 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
      */
     public function __load()
     {
-        $this->__initializer__ && $this->__initializer__->__invoke($this, '__load', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__load', []);
     }
 
     /**
@@ -183,7 +183,7 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
         }
 
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
 
         return parent::getId();
     }
@@ -194,7 +194,7 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
     public function getNome()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNome', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNome', []);
 
         return parent::getNome();
     }
@@ -205,7 +205,7 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
     public function setId($id)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', array($id));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);
 
         return parent::setId($id);
     }
@@ -216,7 +216,7 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
     public function setNome($nome)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNome', array($nome));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNome', [$nome]);
 
         return parent::setNome($nome);
     }
@@ -227,7 +227,7 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
     public function __toString()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
     }
@@ -238,9 +238,20 @@ class Categoria extends \Livraria\Entity\Categoria implements \Doctrine\ORM\Prox
     public function toArray()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'toArray', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'toArray', []);
 
         return parent::toArray();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLivros()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLivros', []);
+
+        return parent::getLivros();
     }
 
 }

@@ -2,18 +2,20 @@
 
 namespace LivrariaAdmin\Controller;
 
+use Zend\View\Model\ViewModel;
+
 class LivroController extends CrudController {
+    
     public function __construct() {
-        $this->entity = "Livraria\Entity\Categoria";
-        $this->form = "LivrariaAdmin\Form\Categoria";
-        $this->service = "Livraria\Service\Categoria";
-        $this->controller = "categoria";
-        $this->route = "livraria-admin";
+        $this->entity     = "Livraria\Entity\Livro";
+        $this->form       = "LivrariaAdmin\Form\Livro";
+        $this->service    = "Livraria\Service\Livro";
+        $this->controller = "Livro";
+        $this->route      = "Livraria-admin";
     }
     
-    //Inserir
     public function newAction() {
-        $form = new $this->getServiceLocator($this->form);
+        $form = $this->getServiceLocator()->get($this->form);
         $request = $this->getRequest();
         
         if ($request->isPost()) {
@@ -27,9 +29,8 @@ class LivroController extends CrudController {
         return new ViewModel(array('form' => $form));
     }
 
-    //Editar
     public function editAction() {
-        $form = new $this->getServiceLocator($this->form);
+        $form = $this->getServiceLocator()->get($this->form);
         $request = $this->getRequest();
         
         $repository = $this->getEm()->getRepository($this->entity);

@@ -31,7 +31,7 @@ class Livro {
 
     /**
      * @ORM\ManyToOne(targetEntity="Livraria\Entity\Categoria",inversedBy="livro")
-     * @ORM\JoinColumn(name="categoria",referencedColumnName="id)
+     * @ORM\JoinColumn(name="id_categoria",referencedColumnName="id")
      */
     protected $categoria;
 

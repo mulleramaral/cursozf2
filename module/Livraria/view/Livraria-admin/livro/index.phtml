@@ -1,9 +1,12 @@
-<h1>Categorias</h1>
+<h1>Livros</h1>
 
 <table class="table">
     <thead>
     <th>Id</th>
     <th>Nome</th>
+    <th>Categoria</th>
+    <th>ISBN</th>
+    <th>Valor</th>
     <th>Acao</th>
 </thead>
 
@@ -16,6 +19,15 @@
             </td>
             <td>
                 <?= $entity->getNome(); ?>
+            </td>
+            <td>
+                <?= $entity->getCategoria(); ?>
+            </td>
+            <td>
+                <?= $entity->getIsbn(); ?>
+            </td>
+            <td>
+                <?= $entity->getValor(); ?>
             </td>
             <td>
                 <a class="btn btn-success" href="<?= $this->url('livraria-admin-interna',
@@ -36,4 +48,4 @@
 <?php echo $this->paginationControl($this->data,'Sliding','paginator'); ?>
 
 
-<a class="btn btn-success" href="<?= $this->url('livraria-admin',array('controller' => 'livro' , 'action' => 'new'));?>">Nova Categoria</a>
+<a class="btn btn-success" href="<?= $this->url('livraria-admin',array('controller' => 'livro' , 'action' => 'new'));?>">Novo Livro</a>

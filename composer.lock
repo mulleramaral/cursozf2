@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef1cf1fda28955d044ba7a32403493a4",
+    "hash": "7afeb520aa105881c3a8039554c69bb5",
     "content-hash": "9b681d726ed3ed800b6cb89d55610a69",
     "packages": [
         {
@@ -213,16 +213,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.5.3",
+            "version": "v2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "10f1f19651343f87573129ca970aef1a47a6f29e"
+                "reference": "a579557bc689580c19fee4e27487a67fe60defc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/10f1f19651343f87573129ca970aef1a47a6f29e",
-                "reference": "10f1f19651343f87573129ca970aef1a47a6f29e",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/a579557bc689580c19fee4e27487a67fe60defc0",
+                "reference": "a579557bc689580c19fee4e27487a67fe60defc0",
                 "shasum": ""
             },
             "require": {
@@ -231,20 +231,20 @@
                 "doctrine/collections": "1.*",
                 "doctrine/inflector": "1.*",
                 "doctrine/lexer": "1.*",
-                "php": ">=5.3.2"
+                "php": "~5.5|~7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~3.7"
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "2.7.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\": "lib/Doctrine/Common"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -282,7 +282,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-12-25 13:10:16"
+            "time": "2015-12-25 13:18:31"
         },
         {
             "name": "doctrine/dbal",
@@ -357,22 +357,22 @@
         },
         {
             "name": "doctrine/doctrine-module",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineModule.git",
-                "reference": "caaa6f035b299c1b33d011045db79820534ec54a"
+                "reference": "ade6c1667283e3d8131d40e79c427b8a8100e7d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineModule/zipball/caaa6f035b299c1b33d011045db79820534ec54a",
-                "reference": "caaa6f035b299c1b33d011045db79820534ec54a",
+                "url": "https://api.github.com/repos/doctrine/DoctrineModule/zipball/ade6c1667283e3d8131d40e79c427b8a8100e7d3",
+                "reference": "ade6c1667283e3d8131d40e79c427b8a8100e7d3",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "~1.5",
-                "doctrine/common": ">=2.4,<2.6-dev",
-                "php": ">=5.4",
+                "doctrine/common": "~2.6",
+                "php": "^5.5 || ^7.0",
                 "symfony/console": "~2.3|~3.0",
                 "zendframework/zend-authentication": "~2.3",
                 "zendframework/zend-cache": "~2.3",
@@ -431,7 +431,7 @@
                 "module",
                 "zf2"
             ],
-            "time": "2016-01-29 09:43:19"
+            "time": "2016-03-21 22:50:01"
         },
         {
             "name": "doctrine/doctrine-orm-module",
@@ -439,19 +439,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineORMModule.git",
-                "reference": "5eacd0225a7a58e823018d0f22066885bb9416d6"
+                "reference": "50808eb795d00aac6a551023b1bb379de054f9b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineORMModule/zipball/5eacd0225a7a58e823018d0f22066885bb9416d6",
-                "reference": "5eacd0225a7a58e823018d0f22066885bb9416d6",
+                "url": "https://api.github.com/repos/doctrine/DoctrineORMModule/zipball/50808eb795d00aac6a551023b1bb379de054f9b5",
+                "reference": "50808eb795d00aac6a551023b1bb379de054f9b5",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": ">=2.4,<2.7",
                 "doctrine/doctrine-module": "~1.0",
                 "doctrine/orm": ">=2.5,<2.7",
-                "php": ">=5.4",
+                "php": "^5.5 || ^7.0",
                 "symfony/console": "~2.5|~3.0",
                 "zendframework/zend-mvc": "~2.3",
                 "zendframework/zend-servicemanager": "~2.3",
@@ -509,7 +509,7 @@
                 "orm",
                 "zf2"
             ],
-            "time": "2016-02-11 08:47:45"
+            "time": "2016-03-22 00:43:08"
         },
         {
             "name": "doctrine/inflector",
@@ -764,16 +764,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "2ed5e2706ce92313d120b8fe50d1063bcfd12e04"
+                "reference": "6b1175135bc2a74c08a28d89761272de8beed8cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/2ed5e2706ce92313d120b8fe50d1063bcfd12e04",
-                "reference": "2ed5e2706ce92313d120b8fe50d1063bcfd12e04",
+                "url": "https://api.github.com/repos/symfony/console/zipball/6b1175135bc2a74c08a28d89761272de8beed8cd",
+                "reference": "6b1175135bc2a74c08a28d89761272de8beed8cd",
                 "shasum": ""
             },
             "require": {
@@ -820,7 +820,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-28 16:24:34"
+            "time": "2016-03-16 17:00:50"
         },
         {
             "name": "symfony/polyfill-mbstring",
