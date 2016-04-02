@@ -10,8 +10,8 @@ class LivroController extends CrudController {
         $this->entity     = "Livraria\Entity\Livro";
         $this->form       = "LivrariaAdmin\Form\Livro";
         $this->service    = "Livraria\Service\Livro";
-        $this->controller = "Livro";
-        $this->route      = "Livraria-admin";
+        $this->controller = "livro";
+        $this->route      = "livraria-admin";
     }
     
     public function newAction() {

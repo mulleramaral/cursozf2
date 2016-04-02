@@ -13,7 +13,10 @@ class Livro extends Form {
         parent::__construct('livro');
         $this->categorias = $categorias;
 
-        $this->setAttribute('method', 'post');
+        //$this->setAttribute('method', 'post');
+        $this->setAttributes(array(
+            'method' => 'post',
+        ));
         //$this->setInputFilter(new CategoriaFilter());
 
         $this->add(array(
@@ -26,12 +29,13 @@ class Livro extends Form {
         $this->add(array(
             'name' => 'nome',
             'options' => array(
-                'label', 'Nome',
-                'type' => 'text'
+                'type' => 'text',
+                'label', 'Nome'
             ),
             'attributes' => array(
                 'id' => 'nome',
-                'placeholder' => 'Informe o nome'
+                'placeholder' => 'Informe o nome',
+                'class' => 'form-control'
             )
         ));
 
@@ -40,7 +44,7 @@ class Livro extends Form {
                 ->setName("categoria")
                 ->setOptions(array(
                     'value_options' => $categorias
-        ));
+        ))->setAttribute('class','form-control');
 
         $this->add($categoria);
 
@@ -53,7 +57,8 @@ class Livro extends Form {
             ),
             'attributes' => array(
                 'id' => 'autor',
-                'placeholder' => 'Entre com o Valor'
+                'placeholder' => 'Entre com o Valor',
+                'class' => 'form-control'
             ),
         ));
 
@@ -65,7 +70,8 @@ class Livro extends Form {
             ),
             'attributes' => array(
                 'id' => 'isbn',
-                'placeholder' => 'Entre com o ISBN'
+                'placeholder' => 'Entre com o ISBN',
+                'class' => 'form-control'
             )
         ));
 
@@ -77,7 +83,8 @@ class Livro extends Form {
             ),
             'attributes' => array(
                 'id' => 'valor',
-                'placeholder' => 'Entre com o valor'
+                'placeholder' => 'Entre com o valor',
+                'class' => 'form-control'
             )
         ));
 
